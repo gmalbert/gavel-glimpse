@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Gavel Glimpse is a portfolio hub for Granite State Appeals and Supreme Scrutiny, two public legal-data websites.">
+  <meta name="description" content="Gavel Glimpse is a portfolio hub for Granite State Appeals, Supreme Scrutiny, and Relief Docket, three public legal-data websites.">
   <link rel="icon" type="image/png" href="data_files/logo_no_text.png">
   <link rel="apple-touch-icon" href="data_files/logo_no_text.png">
   <meta property="og:title" content="Gavel Glimpse | Legal Data, Clear Insight" />
-  <meta property="og:description" content="Gavel Glimpse is a portfolio hub for Granite State Appeals and Supreme Scrutiny, two public legal-data websites." />
+  <meta property="og:description" content="Gavel Glimpse is a portfolio hub for Granite State Appeals, Supreme Scrutiny, and Relief Docket, three public legal-data websites." />
   <meta property="og:image" content="data_files/logo.png" />
   <meta property="og:image:alt" content="Gavel Glimpse logo" />
   <meta property="og:url" content="https://www.gavelglimpse.com" />
@@ -24,6 +24,7 @@
       --mist: #edf4f6;
       --teal: #0f5f73;
       --blue: #173b72;
+      --relief: #1266df;
       --white: #ffffff;
     }
 
@@ -216,7 +217,7 @@
 
     .project-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 22px;
     }
 
@@ -238,7 +239,7 @@
       justify-content: center;
       margin: 0 0 20px;
       padding: 0;
-      overflow: hidden;
+      overflow: visible;
     }
 
     .project-logo img {
@@ -256,6 +257,18 @@
     .project-logo.supreme img {
       max-height: 188px;
       max-width: 115%;
+    }
+
+    .project-logo.relief {
+      background: transparent;
+    }
+
+    .project-logo.relief img {
+      width: 100%;
+      height: auto;
+      max-height: 122px;
+      max-width: 100%;
+      background: #ffffff;
     }
 
     .github-link {
@@ -506,16 +519,16 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-content">
         <div class="eyebrow">Legal data. Clear insight.</div>
-        <h1 id="hero-title">Two courts, one clearer way to explore them.</h1>
+        <h1 id="hero-title">Legal records, clearer patterns.</h1>
         <p class="lede">
-          Gavel Glimpse is the home base for two public legal-data projects:
-          Granite State Appeals, focused on the New Hampshire Supreme Court, and
-          Supreme Scrutiny, focused on the United States Supreme Court. Both turn
-          public court records into searchable, visual, and more approachable civic information.
+          Gavel Glimpse is the home base for three public legal-data projects:
+          Granite State Appeals, Supreme Scrutiny, and Relief Docket. Each turns
+          public legal records into searchable, visual, and more approachable civic information.
         </p>
         <div class="actions" aria-label="Featured site links">
           <a class="button" href="http://www.granitestateappeals.com/" target="_blank" rel="noopener noreferrer">Visit Granite State Appeals</a>
-          <a class="button secondary" href="http://www.supremescrutiny.com/" target="_blank" rel="noopener noreferrer">Visit Supreme Scrutiny</a>
+          <a class="button" href="http://www.supremescrutiny.com/" target="_blank" rel="noopener noreferrer">Visit Supreme Scrutiny</a>
+          <a class="button" href="http://www.reliefdocket.com/" target="_blank" rel="noopener noreferrer">Visit Relief Docket</a>
         </div>
       </div>
       <div class="hero-logo">
@@ -598,6 +611,39 @@
             <li>Explanation views show which case features appear to matter most for a prediction.</li>
           </ul>
         </article>
+
+        <article class="project-card" style="--accent: var(--relief);">
+          <div class="project-logo relief">
+            <img src="data_files/immigration.png?v=2" alt="Relief Docket logo">
+          </div>
+          <h3>Relief Docket</h3>
+          <div class="scope">Immigration Court Analytics</div>
+          <p>
+            A public-facing analytics site for exploring immigration court cases, judge profiles,
+            court statistics, nationality outcomes, and policy trends.
+          </p>
+          <p>
+            Built for researchers, journalists, attorneys, policy watchers, and civic groups who
+            want a clearer view of the immigration court system.
+          </p>
+          <div class="actions">
+            <a class="button" href="http://www.reliefdocket.com/" target="_blank" rel="noopener noreferrer">Open site</a>
+            <a class="github-link" href="https://github.com/gmalbert/immigration" target="_blank" rel="noopener noreferrer" aria-label="View Relief Docket on GitHub">
+              <img src="data_files/github.png" alt="">
+            </a>
+          </div>
+          <div class="label">How it is built</div>
+          <ul>
+            <li>The site organizes public immigration court data into pages for courts, judges, case processing, respondents, enforcement, and policy trends.</li>
+            <li>Charts, filters, and comparison views help visitors understand patterns across courts and time periods.</li>
+            <li>Data-quality notes explain known limits in the underlying records so readers can interpret the numbers carefully.</li>
+          </ul>
+          <div class="label">Models and analysis</div>
+          <ul>
+            <li>The site focuses on descriptive analytics, comparisons, and trend views rather than legal advice.</li>
+            <li>Research notes and source context help visitors understand what the data can and cannot show.</li>
+          </ul>
+        </article>
       </div>
     </section>
 
@@ -639,7 +685,8 @@
         data such as issue area, court of origin, party type, circuit split, and other case features.
         Those predictions are best read as historical pattern-finding tools. Granite State Appeals is
         currently centered on collection, classification, browsing, and trend analysis of New Hampshire
-        Supreme Court materials rather than LLM-generated answers.
+        Supreme Court materials. Relief Docket is centered on immigration court analytics, data quality,
+        and public research context.
       </div>
     </section>
 
@@ -659,6 +706,7 @@
         <a href="#top">About Gavel Glimpse</a>
         <a href="http://www.granitestateappeals.com/">Granite State Appeals</a>
         <a href="http://www.supremescrutiny.com/">Supreme Scrutiny</a>
+        <a href="http://www.reliefdocket.com/">Relief Docket</a>
       </div>
     </div>
   </footer>

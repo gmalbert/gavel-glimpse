@@ -5,7 +5,7 @@ Copy this file to a Streamlit app repository and import it to add consistent
 Gavel Glimpse branding and the informational-purpose disclaimer.
 """
 
-GAVEL_GLIMPSE_URL = "GAVEL_GLIMPSE_URL"
+GAVEL_GLIMPSE_URL = "http://www.gavel-glimpse.com"
 GAVEL_GLIMPSE_LOGO_URL = (
     "https://raw.githubusercontent.com/gmalbert/gavel-glimpse/main/data_files/logo_no_text.png"
 )
