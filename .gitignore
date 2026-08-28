@@ -1,2 +1,3 @@
 http.*.log
 __pycache__/
+old/

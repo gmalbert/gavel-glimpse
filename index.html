@@ -3,532 +3,135 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Gavel Glimpse is a portfolio hub for Granite State Appeals, Supreme Scrutiny, and Relief Docket, three public legal-data websites.">
+  <meta name="description" content="Gavel Glimpse brings together Granite State Appeals, Supreme Scrutiny, Relief Docket, and New Hampshire Case Law Research.">
   <link rel="icon" type="image/png" href="data_files/logo_no_text.png">
   <link rel="apple-touch-icon" href="data_files/logo_no_text.png">
-  <meta property="og:title" content="Gavel Glimpse | Legal Data, Clear Insight" />
-  <meta property="og:description" content="Gavel Glimpse is a portfolio hub for Granite State Appeals, Supreme Scrutiny, and Relief Docket, three public legal-data websites." />
-  <meta property="og:image" content="data_files/logo.png" />
-  <meta property="og:image:alt" content="Gavel Glimpse logo" />
-  <meta property="og:url" content="https://www.gavelglimpse.com" />
-  <meta property="og:type" content="website" />
-  <title>Gavel Glimpse | Legal Data, Clear Insight</title>
+  <meta property="og:title" content="Gavel Glimpse | Legal Data, Clear Insight">
+  <meta property="og:description" content="Explore Granite State Appeals, Supreme Scrutiny, Relief Docket, and New Hampshire Case Law Research.">
+  <meta property="og:url" content="https://www.gavelglimpse.com">
+  <meta property="og:image" content="data_files/logo.png">
+  <meta property="og:type" content="website">
+  <title>Gavel Glimpse | Four ways into legal data</title>
   <style>
     :root {
-      --navy: #10243d;
       --ink: #17212f;
+      --navy: #10243d;
       --muted: #5c6878;
-      --line: #d8dee8;
+      --line: #d7dee6;
+      --paper: #f6f5ef;
+      --white: #fff;
       --gold: #c59b31;
-      --paper: #f7f6f1;
-      --mist: #edf4f6;
       --teal: #0f5f73;
       --blue: #173b72;
-      --relief: #1266df;
-      --white: #ffffff;
+      --green: #1d6758;
+      --coral: #b85745;
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
       color: var(--ink);
       background:
-        linear-gradient(180deg, rgba(16, 36, 61, 0.08), rgba(247, 246, 241, 0) 380px),
-        var(--paper);
-      font-family: Aptos, "Aptos Display", "Segoe UI", system-ui, -apple-system, sans-serif;
-      line-height: 1.5;
-    }
-
-    a {
-      color: var(--teal);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      border-bottom: 1px solid rgba(216, 222, 232, 0.75);
-      background: rgba(247, 246, 241, 0.88);
-      backdrop-filter: blur(12px);
-      font-family: Aptos, "Aptos Display", "Segoe UI", system-ui, -apple-system, sans-serif;
-    }
-
-    .header-inner,
-    main,
-    .footer-inner {
-      width: min(1120px, calc(100% - 32px));
-      margin: 0 auto;
-    }
-
-    .header-inner {
-      min-height: 68px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      color: var(--navy);
-      font-weight: 700;
-      letter-spacing: 0;
-    }
-
-    .brand img {
-      width: 56px;
-      height: 48px;
-      object-fit: contain;
-    }
-
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      font-size: 0.94rem;
-      font-weight: 700;
-    }
-
-    nav a {
-      color: var(--navy);
-    }
-
-    .hero {
-      min-height: min(720px, calc(100vh - 118px));
-      display: grid;
-      grid-template-columns: minmax(0, 1.16fr) minmax(290px, 0.84fr);
-      align-items: center;
-      gap: 40px;
-      padding: 56px 0 38px;
-    }
-
-    .hero-content {
-      max-width: 850px;
-    }
-
-    .hero-logo {
-      border-radius: 8px;
-      padding: clamp(8px, 2vw, 18px);
-    }
-
-    .hero-logo img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-
-    .eyebrow {
-      color: var(--gold);
-      font-size: 0.82rem;
-      font-weight: 850;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 14px;
-    }
-
-    h1,
-    h2,
-    h3 {
-      color: var(--navy);
-      line-height: 1.05;
-      letter-spacing: 0;
-      margin: 0;
-    }
-
-    h1 {
-      font-size: clamp(3rem, 7vw, 5.9rem);
-      max-width: 780px;
-    }
-
-    .lede {
-      color: var(--muted);
-      font-size: clamp(1.08rem, 2vw, 1.24rem);
-      line-height: 1.68;
-      max-width: 790px;
-      margin: 22px 0 0;
-    }
-
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 28px;
-    }
-
-    .button {
-      min-height: 44px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0 17px;
-      border-radius: 6px;
-      border: 1px solid var(--navy);
-      background: var(--navy);
-      color: var(--white);
-      font-weight: 700;
-    }
-
-    .button:hover {
-      text-decoration: none;
-      background: #183556;
-    }
-
-    .button.secondary {
-      background: transparent;
-      color: var(--navy);
-    }
-
-    .button.secondary:hover {
-      background: rgba(16, 36, 61, 0.07);
-    }
-
-    .section {
-      padding: 38px 0;
-    }
-
-    .section-heading {
-      max-width: 850px;
-      margin-bottom: 22px;
-    }
-
-    .section-heading h2 {
-      font-size: clamp(2rem, 3.4vw, 3rem);
-    }
-
-    .section-heading p {
-      color: var(--muted);
-      font-size: 1.05rem;
-      line-height: 1.68;
-      margin: 14px 0 0;
-    }
-
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 22px;
-    }
-
-    .project-card {
-      --accent: var(--teal);
-      border: 1px solid var(--line);
-      border-top: 5px solid var(--accent);
-      border-radius: 8px;
-      background: rgba(255, 255, 255, 0.78);
-      padding: 24px;
-      min-height: 100%;
-      box-shadow: 0 16px 38px rgba(16, 36, 61, 0.07);
-    }
-
-    .project-logo {
-      height: 188px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 0 20px;
-      padding: 0;
-      overflow: visible;
-    }
-
-    .project-logo img {
-      display: block;
-      max-width: 100%;
-      max-height: 132px;
-      object-fit: contain;
-    }
-
-    .project-logo.supreme {
-      height: 188px;
-      margin: 0 0 20px;
-    }
-
-    .project-logo.supreme img {
-      max-height: 188px;
-      max-width: 115%;
-    }
-
-    .project-logo.relief {
-      background: transparent;
-    }
-
-    .project-logo.relief img {
-      width: 100%;
-      height: auto;
-      max-height: 122px;
-      max-width: 100%;
-      background: #ffffff;
-    }
-
-    .github-link {
-      width: 44px;
-      height: 44px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 6px;
-      border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.44);
-    }
-
-    .github-link:hover {
-      background: rgba(16, 36, 61, 0.07);
-      text-decoration: none;
-    }
-
-    .github-link img {
-      width: 25px;
-      height: 25px;
-      object-fit: contain;
-    }
-
-    .project-card h3 {
-      font-size: 1.7rem;
-    }
-
-    .scope {
-      color: var(--accent);
-      font-weight: 850;
-      margin: 7px 0 14px;
-    }
-
-    .project-card p {
-      color: var(--muted);
-      margin: 0 0 14px;
-    }
-
-    .label {
-      color: var(--navy);
-      font-size: 0.78rem;
-      font-weight: 850;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      margin-top: 20px;
-    }
-
-    ul {
-      margin: 8px 0 0;
-      padding-left: 20px;
-      color: var(--muted);
-    }
-
-    li + li {
-      margin-top: 7px;
-    }
-
-    .process-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 14px;
-    }
-
-    .process-step {
-      min-height: 164px;
-      border: 1px solid #d5e5e9;
-      border-radius: 8px;
-      background: var(--mist);
-      padding: 18px;
-    }
-
-    .process-step strong {
-      display: block;
-      color: var(--navy);
-      margin-bottom: 8px;
-    }
-
-    .process-step span {
-      color: var(--muted);
-      font-size: 0.98rem;
-    }
-
-    .note-band {
-      border-left: 5px solid var(--gold);
-      border-radius: 8px;
-      border-top: 1px solid var(--line);
-      border-right: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.76);
-      padding: 20px 22px;
-      color: var(--muted);
-      line-height: 1.68;
-      max-width: 980px;
-    }
-
-    .note-band strong {
-      color: var(--navy);
-    }
-
-    .footer-copy {
-      margin-top: 18px;
-      border-radius: 8px;
-      background: var(--navy);
-      color: #e9eef5;
-      padding: 22px;
-      max-width: 850px;
-    }
-
-    .footer-copy h3 {
-      color: var(--white);
-      font-size: 1.2rem;
-      margin-bottom: 8px;
-    }
-
-    .footer-copy p {
-      color: #cbd5e2;
-      margin: 0;
-    }
-
-    .gavel-footer {
-      margin-top: 42px;
-      border-top: 1px solid var(--line);
-      background: #ffffff;
-      color: var(--muted);
-      font-family: Aptos, "Aptos Display", "Segoe UI", system-ui, -apple-system, sans-serif;
-    }
-
-    .gavel-footer-inner {
-      width: min(1120px, calc(100% - 32px));
-      min-height: 104px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: auto minmax(0, 1fr) auto;
-      align-items: center;
-      gap: 18px;
-      padding: 22px 0;
-    }
-
-    .gavel-footer-logo {
-      width: 46px;
-      height: 46px;
-      object-fit: contain;
-    }
-
-    .gavel-footer-copy p {
-      margin: 0;
-    }
-
-    .gavel-footer-title {
-      color: var(--navy);
-      font-weight: 700;
-    }
-
-    .gavel-footer-note {
-      color: var(--muted);
-      font-size: 0.94rem;
+        radial-gradient(circle at 84% 10%, rgba(197, 155, 49, .12), transparent 28rem),
+        linear-gradient(180deg, #e9f1f0 0, var(--paper) 34rem);
+      font-family: "Segoe UI", Aptos, system-ui, sans-serif;
       line-height: 1.55;
-      margin-top: 5px !important;
-      max-width: 760px;
     }
-
-    .gavel-footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
+    a { color: var(--teal); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { width: min(1160px, calc(100% - 40px)); margin: 0 auto; }
+    .site-header {
+      position: sticky; top: 0; z-index: 5;
+      border-bottom: 1px solid rgba(215, 222, 230, .8);
+      background: rgba(246, 245, 239, .88);
+      backdrop-filter: blur(14px);
     }
-
-    .gavel-footer-links a {
-      color: var(--teal);
-      font-weight: 700;
+    .header-inner { min-height: 70px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: inline-flex; align-items: center; color: var(--navy); font-weight: 800; }
+    .brand img { width: 50px; height: 46px; object-fit: contain; }
+    nav { display: flex; flex-wrap: wrap; gap: 22px; font-size: .9rem; font-weight: 700; }
+    nav a { color: var(--navy); }
+    .hero { min-height: 510px; padding: 66px 0 54px; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(280px, .9fr); gap: 56px; align-items: center; }
+    .hero-logo { padding: 10px; }
+    .hero-logo img { display: block; width: 100%; height: auto; }
+    .eyebrow, .kicker { color: var(--gold); font-size: .78rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    h1, h2, h3 { color: var(--navy); line-height: 1.08; margin: 0; }
+    h1 { max-width: 760px; font-family: Georgia, "Times New Roman", serif; font-size: clamp(3.3rem, 7vw, 6.6rem); font-weight: 500; letter-spacing: -.02em; }
+    .lede { max-width: 670px; color: var(--muted); font-size: 1.16rem; line-height: 1.7; margin: 24px 0 0; }
+    .actions { display: flex; flex-wrap: wrap; gap: 11px; margin-top: 28px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 16px; border: 1px solid var(--navy); border-radius: 5px; background: var(--navy); color: var(--white); font-weight: 750; }
+    .button:hover { background: #1d426a; text-decoration: none; }
+    .button.secondary { background: transparent; color: var(--navy); }
+    .button.secondary:hover { background: rgba(16, 36, 61, .07); }
+    .section { padding: 38px 0 72px; }
+    .section-heading { display: block; margin-bottom: 24px; }
+    h2 { font-family: Georgia, "Times New Roman", serif; font-size: clamp(2.1rem, 4vw, 3.6rem); font-weight: 500; }
+    .section-heading h2 { max-width: none; }
+    .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .project-card { position: relative; min-height: 100%; border: 1px solid var(--line); border-top: 5px solid var(--accent); border-radius: 7px; background: rgba(255, 255, 255, .8); padding: 25px; box-shadow: 0 14px 34px rgba(16, 36, 61, .06); }
+    .project-card.featured { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(180px, .46fr) minmax(0, 1fr); gap: 28px; background: #fff; }
+    .project-card h3 { font-size: 1.75rem; }
+    .scope { color: var(--accent); font-weight: 800; margin: 7px 0 14px; }
+    .project-card p { color: var(--muted); margin: 0 0 14px; }
+    .project-card ul { color: var(--muted); margin: 17px 0 0; padding-left: 19px; }
+    .project-card li + li { margin-top: 7px; }
+    .project-mark { min-height: 180px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(29, 103, 88, .2); background: #e8f0ed; padding: 18px; text-align: center; }
+    .project-mark img { display: block; width: min(100%, 200px); height: auto; }
+    .project-logo { height: 170px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+    .project-logo img { display: block; max-width: 100%; max-height: 125px; object-fit: contain; }
+    .project-logo.supreme { height: 170px; }
+    .project-logo.supreme img { max-height: 170px; max-width: 110%; }
+    .project-logo.relief img { width: 100%; max-height: 120px; background: var(--white); }
+    .card-footer { display: flex; align-items: center; gap: 12px; margin-top: 22px; }
+    .github-link { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: 1px solid var(--line); border-radius: 5px; background: #fff; }
+    .github-link:hover { background: #eef2f4; text-decoration: none; }
+    .github-link img { width: 24px; height: 24px; }
+    .note { border-left: 5px solid var(--gold); border-top: 1px solid var(--line); border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); border-radius: 7px; background: rgba(255, 255, 255, .75); padding: 20px 22px; color: var(--muted); }
+    .note strong { color: var(--navy); }
+    .gavel-footer { border-top: 1px solid var(--line); background: #fff; }
+    .footer-inner { min-height: 105px; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 18px; padding: 22px 0; }
+    .footer-inner img { width: 46px; height: 46px; object-fit: contain; }
+    .footer-inner p { margin: 0; color: var(--muted); font-size: .92rem; }
+    .footer-inner strong { color: var(--navy); }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 15px; font-weight: 700; }
+    @media (max-width: 780px) {
+      .hero { min-height: auto; grid-template-columns: 1fr; padding-top: 52px; }
+      .project-card.featured { grid-template-columns: 1fr; }
+      .project-mark { min-height: 130px; }
     }
-
-    @media (max-width: 880px) {
-      .header-inner {
-        align-items: flex-start;
-        flex-direction: column;
-        padding: 14px 0;
-      }
-
-      .hero {
-        min-height: auto;
-        grid-template-columns: 1fr;
-        padding-top: 44px;
-      }
-
-      .hero-logo {
-        max-width: 480px;
-      }
-
-      .project-grid,
-      .process-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    @media (max-width: 620px) {
-      .header-inner,
-      main,
-      .gavel-footer-inner {
-        width: min(100% - 24px, 1120px);
-      }
-
-      nav {
-        gap: 11px;
-      }
-
-      .project-grid,
-      .process-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .project-logo {
-        height: 150px;
-      }
-
-      .project-logo.supreme {
-        height: 150px;
-        margin-top: 0;
-      }
-
-      .gavel-footer-inner {
-        align-items: flex-start;
-        grid-template-columns: auto minmax(0, 1fr);
-      }
-
-      .gavel-footer-links {
-        grid-column: 2;
-      }
+    @media (max-width: 600px) {
+      .wrap { width: min(100% - 24px, 1160px); }
+      .header-inner { align-items: flex-start; flex-direction: column; padding: 12px 0; }
+      nav { gap: 12px; }
+      .hero { padding-bottom: 46px; }
+      .project-grid { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: auto minmax(0, 1fr); }
+      .footer-links { grid-column: 2; }
     }
   </style>
 </head>
 <body>
   <header class="site-header">
-    <div class="header-inner">
-      <a class="brand" href="#top" aria-label="Gavel Glimpse home">
-        <img src="data_files/logo_no_text.png" alt="" aria-hidden="true">
-      </a>
+    <div class="wrap header-inner">
+      <a class="brand" href="#top" aria-label="Gavel Glimpse home"><img src="data_files/logo_no_text.png" alt="" aria-hidden="true"></a>
       <nav aria-label="Primary navigation">
         <a href="#sites">Sites</a>
-        <a href="#approach">Approach</a>
-        <a href="#models">Models</a>
+        <a href="#nh-case-law">NH Case Law</a>
+        <a href="#principles">Principles</a>
       </nav>
     </div>
   </header>
 
   <main id="top">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-content">
-        <div class="eyebrow">Legal data. Clear insight.</div>
-        <h1 id="hero-title">Legal records, clearer patterns.</h1>
-        <p class="lede">
-          Gavel Glimpse is the home base for three public legal-data projects:
-          Granite State Appeals, Supreme Scrutiny, and Relief Docket. Each turns
-          public legal records into searchable, visual, and more approachable civic information.
-        </p>
-        <div class="actions" aria-label="Featured site links">
-          <a class="button" href="http://www.granitestateappeals.com/" target="_blank" rel="noopener noreferrer">Visit Granite State Appeals</a>
-          <a class="button" href="http://www.supremescrutiny.com/" target="_blank" rel="noopener noreferrer">Visit Supreme Scrutiny</a>
-          <a class="button" href="http://www.reliefdocket.com/" target="_blank" rel="noopener noreferrer">Visit Relief Docket</a>
+    <section class="wrap hero" aria-labelledby="hero-title">
+      <div>
+        <div class="eyebrow">Gavel Glimpse / Research in public</div>
+        <h1 id="hero-title">Four ways into legal data.</h1>
+        <p class="lede">A growing collection of focused research tools that turn public court records into something easier to search, compare, and understand.</p>
+        <div class="actions">
+          <a class="button" href="#nh-case-law">Explore NH Case Law</a>
+          <a class="button secondary" href="#sites">See all projects</a>
         </div>
       </div>
       <div class="hero-logo">
@@ -536,178 +139,67 @@
       </div>
     </section>
 
-    <section class="section" id="sites">
+    <section class="wrap section" id="sites" aria-labelledby="sites-title">
       <div class="section-heading">
-        <h2>The sites</h2>
-        <p>
-          Each site has its own court, data shape, and research use case. This hub explains
-          what each one does, how it is built, and where the public source code lives.
-        </p>
+        <div class="eyebrow">The collection</div>
+        <h2 id="sites-title">Different courts. Shared curiosity.</h2>
       </div>
-
       <div class="project-grid">
-        <article class="project-card" style="--accent: var(--teal);">
-          <div class="project-logo">
-            <img src="data_files/nh-supreme-court.png" alt="Granite State Appeals logo">
+        <article class="project-card featured" id="nh-case-law" style="--accent: var(--green);">
+          <div class="project-mark"><img src="data_files/nh-case-law-logo.png" alt="NH Case Law logo"></div>
+          <div>
+            <div class="kicker">Featured project</div>
+            <h3>New Hampshire Case Law Research</h3>
+            <div class="scope">New Hampshire Supreme Court · 2002 to present</div>
+            <p>Search opinions by issue, phrase, citation, docket, holding, or proposition. Follow the issue hierarchy, trace citation relationships, and keep a research workspace close at hand.</p>
+            <ul>
+              <li>Search authority, browse topics, or inspect a citation network.</li>
+              <li>Structured digests make holdings and cited propositions easier to compare.</li>
+              <li>Coverage, limitations, and disclaimers are documented in the app.</li>
+            </ul>
+            <div class="card-footer">
+              <a class="button" href="https://www.nhcaselaw.com/" target="_blank" rel="noopener noreferrer">Open NH Case Law</a>
+            </div>
           </div>
+        </article>
+
+        <article class="project-card" style="--accent: var(--teal);">
+          <div class="project-logo"><img src="data_files/nh-supreme-court.png" alt="Granite State Appeals logo"></div>
           <h3>Granite State Appeals</h3>
           <div class="scope">New Hampshire Supreme Court</div>
-          <p>
-            A public-facing guide to opinions, orders, justices, topics, trial-court outcomes,
-            and court trends in New Hampshire.
-          </p>
-          <p>
-            Built for residents, journalists, students, attorneys, researchers, and civic groups
-            who want a clearer view of the state's highest court.
-          </p>
-          <div class="actions">
-            <a class="button" href="http://www.granitestateappeals.com/" target="_blank" rel="noopener noreferrer">Open site</a>
-            <a class="github-link" href="https://github.com/gmalbert/nh-supreme-court" target="_blank" rel="noopener noreferrer" aria-label="View Granite State Appeals on GitHub">
-              <img src="data_files/github.png" alt="">
-            </a>
-          </div>
-          <div class="label">How it is built</div>
-          <ul>
-            <li>The site gathers public <a href="https://www.courts.nh.gov/our-courts/supreme-court">New Hampshire Supreme Court</a> materials and turns them into easier-to-browse pages.</li>
-            <li>Opinions, orders, justices, topics, and trial-court results are organized into searchable sections.</li>
-            <li>Charts and filters help visitors spot patterns without needing to read every document one by one.</li>
-          </ul>
-          <div class="label">Models and analysis</div>
-          <ul>
-            <li>No large language model is required for the core site experience.</li>
-            <li>Classification and trend views are presented as research aids, with source records kept close by.</li>
-          </ul>
+          <p>A public-facing guide to opinions, orders, justices, topics, trial-court outcomes, and court trends.</p>
+          <div class="card-footer"><a class="button" href="https://www.granitestateappeals.com/" target="_blank" rel="noopener noreferrer">Open site</a><a class="github-link" href="https://github.com/gmalbert/nh-supreme-court" target="_blank" rel="noopener noreferrer" aria-label="View Granite State Appeals on GitHub"><img src="data_files/github.png" alt=""></a></div>
         </article>
 
         <article class="project-card" style="--accent: var(--blue);">
-          <div class="project-logo supreme">
-            <img src="data_files/us-supreme-court.png" alt="Supreme Scrutiny logo">
-          </div>
+          <div class="project-logo supreme"><img src="data_files/us-supreme-court.png" alt="Supreme Scrutiny logo"></div>
           <h3>Supreme Scrutiny</h3>
           <div class="scope">United States Supreme Court</div>
-          <p>
-            An interactive research app for exploring cases, justices, advocates, issue areas,
-            voting patterns, history, and predicted outcomes.
-          </p>
-          <p>
-            Built for students, legal researchers, journalists, lawyers, and curious readers who
-            want to navigate more than two centuries of Supreme Court history.
-          </p>
-          <div class="actions">
-            <a class="button" href="http://www.supremescrutiny.com/" target="_blank" rel="noopener noreferrer">Open site</a>
-            <a class="github-link" href="https://github.com/gmalbert/supreme-court" target="_blank" rel="noopener noreferrer" aria-label="View Supreme Scrutiny on GitHub">
-              <img src="data_files/github.png" alt="">
-            </a>
-          </div>
-          <div class="label">How it is built</div>
-          <ul>
-            <li>The site draws on <a href="https://www.oyez.org/">Oyez</a>, a public source for United States Supreme Court case information.</li>
-            <li>Case details, justice votes, oral arguments, issue areas, and historical records are organized into connected views.</li>
-            <li>Local copies of frequently used data help the site load faster and keep the research experience smoother.</li>
-          </ul>
-          <div class="label">Models and analysis</div>
-          <ul>
-            <li>Prediction tools estimate likely outcomes, vote splits, and cert-grant probabilities from historical patterns.</li>
-            <li>Explanation views show which case features appear to matter most for a prediction.</li>
-          </ul>
+          <p>An interactive research app for cases, justices, advocates, issue areas, voting patterns, history, and predicted outcomes.</p>
+          <div class="card-footer"><a class="button" href="https://www.supremescrutiny.com/" target="_blank" rel="noopener noreferrer">Open site</a><a class="github-link" href="https://github.com/gmalbert/supreme-court" target="_blank" rel="noopener noreferrer" aria-label="View Supreme Scrutiny on GitHub"><img src="data_files/github.png" alt=""></a></div>
         </article>
 
-        <article class="project-card" style="--accent: var(--relief);">
-          <div class="project-logo relief">
-            <img src="data_files/immigration.png?v=2" alt="Relief Docket logo">
-          </div>
+        <article class="project-card" style="--accent: var(--coral);">
+          <div class="project-logo relief"><img src="data_files/immigration.png?v=2" alt="Relief Docket logo"></div>
           <h3>Relief Docket</h3>
           <div class="scope">Immigration Court Analytics</div>
-          <p>
-            A public-facing analytics site for exploring immigration court cases, judge profiles,
-            court statistics, nationality outcomes, and policy trends.
-          </p>
-          <p>
-            Built for researchers, journalists, attorneys, policy watchers, and civic groups who
-            want a clearer view of the immigration court system.
-          </p>
-          <div class="actions">
-            <a class="button" href="http://www.reliefdocket.com/" target="_blank" rel="noopener noreferrer">Open site</a>
-            <a class="github-link" href="https://github.com/gmalbert/immigration" target="_blank" rel="noopener noreferrer" aria-label="View Relief Docket on GitHub">
-              <img src="data_files/github.png" alt="">
-            </a>
-          </div>
-          <div class="label">How it is built</div>
-          <ul>
-            <li>The site organizes public immigration court data into pages for courts, judges, case processing, respondents, enforcement, and policy trends.</li>
-            <li>Charts, filters, and comparison views help visitors understand patterns across courts and time periods.</li>
-            <li>Data-quality notes explain known limits in the underlying records so readers can interpret the numbers carefully.</li>
-          </ul>
-          <div class="label">Models and analysis</div>
-          <ul>
-            <li>The site focuses on descriptive analytics, comparisons, and trend views rather than legal advice.</li>
-            <li>Research notes and source context help visitors understand what the data can and cannot show.</li>
-          </ul>
+          <p>A public-facing analytics site for exploring immigration court cases, judge profiles, case processing, and policy trends.</p>
+          <div class="card-footer"><a class="button" href="https://www.reliefdocket.com/" target="_blank" rel="noopener noreferrer">Open site</a></div>
         </article>
       </div>
     </section>
 
-    <section class="section" id="approach">
-      <div class="section-heading">
-        <h2>Shared approach</h2>
-        <p>
-          The projects start from public legal materials, preserve links back to original records,
-          and then add structure, filters, visualizations, and clearly labeled analytical tools.
-        </p>
-      </div>
-      <div class="process-grid">
-        <div class="process-step">
-          <strong>1. Collect</strong>
-          <span>Start with public court records, official pages, case materials, and other open legal sources.</span>
-        </div>
-        <div class="process-step">
-          <strong>2. Structure</strong>
-          <span>Turn scattered legal materials into organized information about cases, dates, justices, topics, and outcomes.</span>
-        </div>
-        <div class="process-step">
-          <strong>3. Explore</strong>
-          <span>Make that information easier to search, filter, compare, and understand through plain-language pages and visuals.</span>
-        </div>
-        <div class="process-step">
-          <strong>4. Explain</strong>
-          <span>Keep analysis clearly labeled, preserve links back to source records, and avoid presenting predictions as legal advice.</span>
-        </div>
-      </div>
+    <section class="wrap section" id="principles" aria-labelledby="principles-title">
+      <div class="section-heading"><div><div class="eyebrow">A shared approach</div><h2 id="principles-title">Useful before impressive.</h2></div></div>
+      <div class="note"><strong>Public sources, visible limits.</strong> These projects are built for informational and research purposes. They organize public records and add analysis, but they do not provide legal advice. Source material, methodology, and limitations should remain visible wherever the data is used.</div>
     </section>
-
-    <section class="section" id="models">
-      <div class="section-heading">
-        <h2>What the models are for</h2>
-      </div>
-      <div class="note-band">
-        <strong>These sites are research and public-information tools, not legal advice.</strong>
-        Supreme Scrutiny includes machine-learning features for search and prediction, using structured
-        data such as issue area, court of origin, party type, circuit split, and other case features.
-        Those predictions are best read as historical pattern-finding tools. Granite State Appeals is
-        currently centered on collection, classification, browsing, and trend analysis of New Hampshire
-        Supreme Court materials. Relief Docket is centered on immigration court analytics, data quality,
-        and public research context.
-      </div>
-    </section>
-
   </main>
 
   <footer class="gavel-footer">
-    <div class="gavel-footer-inner">
-      <img class="gavel-footer-logo" src="data_files/logo_no_text.png" alt="" aria-hidden="true">
-      <div class="gavel-footer-copy">
-        <p class="gavel-footer-title">Gavel Glimpse</p>
-        <p class="gavel-footer-note">
-          Part of a public legal-data project created for informational and research purposes only.
-          This site does not provide legal advice and is not a substitute for consulting a qualified attorney.
-        </p>
-      </div>
-      <div class="gavel-footer-links">
-        <a href="#top">About Gavel Glimpse</a>
-        <a href="http://www.granitestateappeals.com/">Granite State Appeals</a>
-        <a href="http://www.supremescrutiny.com/">Supreme Scrutiny</a>
-        <a href="http://www.reliefdocket.com/">Relief Docket</a>
-      </div>
+    <div class="wrap footer-inner">
+      <img src="data_files/logo_no_text.png" alt="" aria-hidden="true">
+      <p><strong>Part of Gavel Glimpse</strong><br>This public legal-data hub is for informational and research purposes only.</p>
+      <div class="footer-links"><a href="#top">Back to top</a><a href="https://www.gavelglimpse.com" target="_blank" rel="noopener noreferrer">Gavel Glimpse</a></div>
     </div>
   </footer>
 </body>
